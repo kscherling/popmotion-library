@@ -1,8 +1,22 @@
 import React, { Component } from 'react'
 import posed, { PoseGroup } from 'react-pose'
+import PropTypes from 'prop-types'
 import defaultPose from './defaultPose'
 
 class StateTransition extends Component {
+  static propTypes = {
+    currentState: PropTypes.oneOfType([
+      PropTypes.string.isRequired,
+      PropTypes.number.isRequired
+    ]),
+    stateMap: PropTypes.array.isRequired,
+    posedProps: PropTypes.shape({
+      pre: PropTypes.object,
+      enter: PropTypes.object,
+      exit: PropTypes.object
+    })
+  }
+
   static defaultProps = {
     currentState: null,
     stateMap: [],
