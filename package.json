@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reactions/component": "^2.0.2",
     "emotion": "^9.2.3",
     "emotion-theming": "^9.2.3",
     "normalize.css": "^8.0.0",
@@ -11,6 +12,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.3",
+    "react-pose": "^2.2.0",
     "react-scripts": "1.1.4",
     "recompose": "^0.27.1",
     "storybook": "^1.0.0"
