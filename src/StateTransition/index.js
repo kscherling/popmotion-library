@@ -1,23 +1,8 @@
 import React, { Component } from 'react'
 import posed, { PoseGroup } from 'react-pose'
 import PropTypes from 'prop-types'
-import defaultPose from './defaultPose'
-
-const isBoundry = (currentStateIdx, prevStateIdx, stateMap) =>
-  currentStateIdx === 0 && prevStateIdx === stateMap.length - 1
-
-const isReverse = (currentState, prevState, stateMap, infinite) => {
-  const currentStateIdx = stateMap.indexOf(currentState)
-  const prevStateIdx = stateMap.indexOf(prevState)
-
-  let boundry = false
-
-  if (infinite) {
-    boundry = isBoundry(currentStateIdx, prevStateIdx, stateMap)
-  }
-
-  return !boundry && currentStateIdx < prevStateIdx
-}
+import defaultPose from './lib/defaultPose'
+import isReverse from './lib/isReverse'
 
 class StateTransition extends Component {
   static propTypes = {
