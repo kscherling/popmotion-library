@@ -3,13 +3,17 @@ import posed, { PoseGroup } from 'react-pose'
 import PropTypes from 'prop-types'
 import defaultPose from './defaultPose'
 
+const isBoundry = (currentStateIdx, prevStateIdx, stateMap) =>
+  currentStateIdx === 0 && prevStateIdx === stateMap.length - 1
+
 const isReverse = (currentState, prevState, stateMap, infinite) => {
   const currentStateIdx = stateMap.indexOf(currentState)
   const prevStateIdx = stateMap.indexOf(prevState)
-  let isBoundry = false
+
+  let boundry = false
 
   if (infinite) {
-    isBoundry = currentStateIdx === 0 && prevStateIdx === stateMap.length - 1
+    boundry = isBoundry(currentStateIdx, prevStateIdx, stateMap)
   }
 
   return !isBoundry && currentStateIdx < prevStateIdx
@@ -32,7 +36,7 @@ class StateTransition extends Component {
 
   static defaultProps = {
     currentState: null,
-    stateMap: [],
+    stateMap: null,
     posedProps: defaultPose,
     infinite: false
   }

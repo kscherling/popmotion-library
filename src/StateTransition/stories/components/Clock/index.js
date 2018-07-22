@@ -10,7 +10,7 @@ const Clock = styled.div`
   font-size: 1.5rem;
 `
 
-const Counter = styled.divContainer`
+const Counter = styled.div`
   display: flex;
   flex-flow: row;
 
