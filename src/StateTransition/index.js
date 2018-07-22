@@ -3,6 +3,18 @@ import posed, { PoseGroup } from 'react-pose'
 import PropTypes from 'prop-types'
 import defaultPose from './defaultPose'
 
+const isReverse = (currentState, prevState, stateMap, infinite) => {
+  const currentStateIdx = stateMap.indexOf(currentState)
+  const prevStateIdx = stateMap.indexOf(prevState)
+  let isBoundry = false
+
+  if (infinite) {
+    isBoundry = currentStateIdx === 0 && prevStateIdx === stateMap.length - 1
+  }
+
+  return !isBoundry && currentStateIdx < prevStateIdx
+}
+
 class StateTransition extends Component {
   static propTypes = {
     currentState: PropTypes.oneOfType([
@@ -14,13 +26,15 @@ class StateTransition extends Component {
       pre: PropTypes.object,
       enter: PropTypes.object,
       exit: PropTypes.object
-    })
+    }),
+    infinite: PropTypes.bool
   }
 
   static defaultProps = {
     currentState: null,
     stateMap: [],
-    posedProps: defaultPose
+    posedProps: defaultPose,
+    infinite: false
   }
 
   constructor(props) {
@@ -35,11 +49,11 @@ class StateTransition extends Component {
 
   static getDerivedStateFromProps(props, state) {
     const { currentState: prevState } = state
-    const { currentState, stateMap } = props
+    const { currentState, stateMap, infinite } = props
 
     return {
       currentState,
-      reverse: stateMap.indexOf(currentState) < stateMap.indexOf(prevState)
+      reverse: isReverse(currentState, prevState, stateMap, infinite)
     }
   }
 

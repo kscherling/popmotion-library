@@ -5,15 +5,11 @@ class Clock extends Component {
   timer = null
 
   state = {
-    time: this.getTime()
-  }
-
-  getTime() {
-    return moment()
+    time: moment()
   }
 
   tick = () => {
-    this.setState({ time: this.getTime() })
+    this.setState({ time: moment() })
     this.scheduleTick()
   }
 
@@ -35,7 +31,8 @@ class Clock extends Component {
     return this.props.render({
       hours: moment(time).format('h'),
       minutes: moment(time).format('mm'),
-      seconds: moment(time).format('ss')
+      seconds: moment(time).format('ss'),
+      meridian: moment(time).format('A')
     })
   }
 }
