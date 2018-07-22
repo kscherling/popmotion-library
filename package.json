@@ -6,6 +6,7 @@
     "@reactions/component": "^2.0.2",
     "emotion": "^9.2.3",
     "emotion-theming": "^9.2.3",
+    "moment": "^2.22.2",
     "normalize.css": "^8.0.0",
     "polished": "^1.9.3",
     "prop-types": "^15.6.2",
