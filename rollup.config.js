@@ -12,18 +12,6 @@ export default {
     resolve(),
     babel({ exclude: 'node_modules/**', plugins: ['external-helpers'] }),
     commonjs()
-  ]
+  ],
+  external: ['moment']
 }
-
-// external: [
-//   'emotion',
-//   'emotion-theming',
-//   'polished',
-
-//   'prop-types',
-//   'react',
-//   'react-dom',
-//   'react-emotion',
-//   'react-redux',
-//   'react-router-dom'
-// ]
