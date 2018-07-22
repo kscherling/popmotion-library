@@ -27,12 +27,4 @@ const Panel = ({ color }) => (
   </StyledPanel>
 )
 
-const states = {
-  red: <Panel color="red" />,
-  orange: <Panel color="orange" />,
-  yellow: <Panel color="yellow" />,
-  green: <Panel color="green" />,
-  blue: <Panel color="blue" />
-}
-
-export default states
+export default Panel

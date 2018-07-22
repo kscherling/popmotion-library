@@ -16,7 +16,7 @@ const isReverse = (currentState, prevState, stateMap, infinite) => {
     boundry = isBoundry(currentStateIdx, prevStateIdx, stateMap)
   }
 
-  return !isBoundry && currentStateIdx < prevStateIdx
+  return !boundry && currentStateIdx < prevStateIdx
 }
 
 class StateTransition extends Component {

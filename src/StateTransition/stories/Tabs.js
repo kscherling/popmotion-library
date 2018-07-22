@@ -4,28 +4,26 @@ import Component from '@reactions/component'
 import StateTransition from '../index'
 import DemoGrid from 'stories/components/DemoGrid'
 import stateMap from './components/Tabs/stateMap'
-import states from './components/Tabs/states'
-import TabGroup from './components/Tabs/TabGroup'
-
-const firstKey = states => Object.keys(states)[0]
+import Panel from './components/Tabs/Panel'
+import Tabs from './components/Tabs/index'
 
 const Story = () => (
   <DemoGrid>
     <Component
-      initialState={{ current: firstKey(states) }}
+      initialState={{ current: stateMap[0] }}
       render={({ state, setState }) => (
-        <TabGroup>
-          <TabGroup.Tabs
+        <Tabs>
+          <Tabs.Links
             currentState={state.current}
             stateMap={stateMap}
             onSelect={tabState => setState({ current: tabState })}
           />
-          <TabGroup.Content>
+          <Tabs.Content>
             <StateTransition currentState={state.current} stateMap={stateMap}>
-              {states[state.current]}
+              <Panel color={state.current} />
             </StateTransition>
-          </TabGroup.Content>
-        </TabGroup>
+          </Tabs.Content>
+        </Tabs>
       )}
     />
   </DemoGrid>

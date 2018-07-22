@@ -1,12 +1,12 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
 
-const StyledTabs = styled.div`
+const TabLinksContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `
 
-const StyledTab = styled.div`
+const TabContainer = styled.div`
   color: ${({ color }) => color};
   padding: 0.5rem 1rem;
   border-radius: 3px;
@@ -29,34 +29,34 @@ const StyledTab = styled.div`
     `};
 `
 
-const TabGroup = styled.div`
+const Tabs = styled.div`
   display: grid;
   grid-auto-flow: row;
   grid-template-rows: auto 1fr;
   grid-gap: 1rem;
 `
 
-const Tab = ({ currentState, state, children, ...rest }) => (
-  <StyledTab active={currentState === state} color={state} {...rest}>
+const TabLink = ({ currentState, state, children, ...rest }) => (
+  <TabContainer active={currentState === state} color={state} {...rest}>
     {children}
-  </StyledTab>
+  </TabContainer>
 )
 
-TabGroup.Tabs = ({ currentState, stateMap, onSelect }) => (
-  <StyledTabs>
+Tabs.Links = ({ currentState, stateMap, onSelect }) => (
+  <TabLinksContainer>
     {stateMap.map((state, idx) => (
-      <Tab
+      <TabLink
         currentState={currentState}
         state={state}
         key={idx}
         onClick={() => onSelect(state)}
       >
         {state}
-      </Tab>
+      </TabLink>
     ))}
-  </StyledTabs>
+  </TabLinksContainer>
 )
 
-TabGroup.Content = styled.div``
+Tabs.Content = styled.div``
 
-export default TabGroup
+export default Tabs
