@@ -1,6 +1,6 @@
 const defaultPose = {
   pre: {
-    x: '100%',
+    x: '35%',
     opacity: 0
   },
   enter: {
@@ -8,7 +8,7 @@ const defaultPose = {
     opacity: 1
   },
   exit: {
-    x: '-100%',
+    x: '-35%',
     opacity: 0
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import StateTransitionStory from './StateTransition/story.js'
+import TabsStory from './StateTransition/stories/Tabs.js'
 
-storiesOf('StateTransition', module).add('Default', StateTransitionStory)
+storiesOf('StateTransition', module).add('Tab Example', TabsStory)

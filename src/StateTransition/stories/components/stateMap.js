@@ -4,8 +4,7 @@ const stateMap = [
   'orange',
   'yellow',
   'green',
-  'blue',
-  'indigo'
+  'blue'
 ]
 
 export default stateMap
