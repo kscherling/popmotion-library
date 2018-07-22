@@ -19,10 +19,11 @@
     "react-pose": "^2.2.0",
     "react-scripts": "1.1.4",
     "recompose": "^0.27.1",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "storybook": "^1.0.0"
   },
   "scripts": {
-    "build": "react-app-rewired build",
+    "build": "rollup --config",
     "storybook": "start-storybook -p 9009 -s public",
     "test": "react-app-rewired test --env=jsdom"
   },
@@ -42,7 +43,9 @@
   "babel": {
     "env": {
       "test": {
-        "plugins": ["emotion"]
+        "plugins": [
+          "emotion"
+        ]
       }
     }
   }
