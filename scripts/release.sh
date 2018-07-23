@@ -16,8 +16,15 @@ fi
 yarn run build
 yarn run build-storybook
 
-if [[ $(git ls-files -m dist/index.js) ]]; then
+docs_changed=$(git ls-files docs -m | wc -l)
+
+if [
+  [ $(git ls-files -m dist/index.js) ]
+  [ "$docs_changed" -gt 0 ]
+];
+then
   git add dist/index.js
+  git add docs/
   git commit -m "[Build] $(date)"
 fi
 
