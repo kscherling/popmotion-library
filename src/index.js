@@ -1,1 +1,1 @@
-export { default as StateTransition } from 'StateTransition/index'
+export { default as StateTransition } from './StateTransition/index'
