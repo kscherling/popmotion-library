@@ -8,6 +8,8 @@
   "scripts": {
     "build": "rollup --config",
     "storybook": "start-storybook -p 9009 -s public",
+    "deploy-storybook":
+      "deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN",
     "test": "react-app-rewired test --env=jsdom"
   },
   "peerDependencies": {
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@reactions/component": "^2.0.2",
     "@storybook/react": "^3.4.7",
+    "@storybook/storybook-deployer": "^2.3.0",
     "babel-plugin-emotion": "^9.2.6",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
@@ -28,11 +31,11 @@
     "moment": "^2.22.2",
     "normalize.css": "^8.0.0",
     "prettier": "^1.13.5",
+    "react": "^16.4.1",
     "react-app-rewired": "^1.5.2",
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.3",
     "react-scripts": "1.1.4",
-    "react": "^16.4.1",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-node-resolve": "^3.3.0",
