@@ -8,6 +8,7 @@
   "scripts": {
     "build": "rollup --config",
     "build-storybook": "build-storybook -c .storybook -o docs",
+    "release": "./scripts/release.sh",
     "storybook": "start-storybook -p 9001",
     "test": "react-app-rewired test --env=jsdom"
   },
