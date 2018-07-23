@@ -7,9 +7,8 @@
   "private": true,
   "scripts": {
     "build": "rollup --config",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages",
+    "build-storybook": "build-storybook -c .storybook -o docs",
+    "storybook": "start-storybook -p 9001",
     "test": "react-app-rewired test --env=jsdom"
   },
   "peerDependencies": {
@@ -23,7 +22,6 @@
   "devDependencies": {
     "@reactions/component": "^2.0.2",
     "@storybook/react": "^3.4.7",
-    "@storybook/storybook-deployer": "^2.3.0",
     "babel-plugin-emotion": "^9.2.6",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",

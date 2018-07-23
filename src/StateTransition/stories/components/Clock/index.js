@@ -10,6 +10,11 @@ const Clock = styled.div`
   font-size: 1.5rem;
 `
 
+const Count = styled.div`
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+`
+
 const Counter = styled.div`
   display: flex;
   flex-flow: row;
@@ -28,11 +33,6 @@ const Counter = styled.div`
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
   }
-`
-
-const Count = styled.div`
-  padding: 0.5rem 0.75rem;
-  background: #fff;
 `
 
 Clock.Counter = ({
