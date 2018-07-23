@@ -8,10 +8,10 @@ if [ "$branch" != "master" ]; then
   exit 1
 fi
 
-# if [ "$changed_files" -gt 0 ]; then
-#   echo "You have uncommitted changes. Please commit and run again."
-#   exit 1
-# fi
+if [ "$changed_files" -gt 0 ]; then
+  echo "You have uncommitted changes. Please commit and run again."
+  exit 1
+fi
 
 yarn run build
 yarn run build-storybook
