@@ -1,4 +1,7 @@
 language: node_js
 cache: yarn
-after_deploy:
-  - deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: master
