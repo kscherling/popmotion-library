@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "build": "rollup --config",
+    "build:watch": "yarn run build --watch",
     "build-storybook": "build-storybook -c .storybook -o docs",
     "release": "./scripts/release.sh",
     "storybook": "start-storybook -p 9001",
@@ -27,9 +28,13 @@
   "devDependencies": {
     "@reactions/component": "^2.0.2",
     "@storybook/react": "^3.4.7",
+    "babel-core": "^6.26.3",
     "babel-plugin-emotion": "^9.2.6",
     "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "emotion": "^9.2.3",
     "moment": "^2.22.2",
     "normalize.css": "^8.0.0",

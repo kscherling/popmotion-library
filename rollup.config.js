@@ -9,9 +9,12 @@ export default {
     format: 'cjs'
   },
   plugins: [
-    babel({ exclude: 'node_modules/**', plugins: ['external-helpers'] }),
-    commonjs(),
-    resolve()
+    resolve(),
+    babel({
+      exclude: 'node_modules/**',
+      plugins: ['external-helpers', 'transform-class-properties']
+    }),
+    commonjs()
   ],
-  external: ['prop-types', 'react-pose', 'react']
+  external: ['react', 'react-dom', 'react-pose', 'prop-types']
 }
