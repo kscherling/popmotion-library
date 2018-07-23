@@ -1,6 +1,6 @@
 {
   "name": "popmotion-library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of react flavored popmotion recipes.",
   "author": "Kyle Scherling",
   "license": "MIT",
@@ -48,7 +48,9 @@
   "babel": {
     "env": {
       "test": {
-        "plugins": ["emotion"]
+        "plugins": [
+          "emotion"
+        ]
       }
     }
   }
