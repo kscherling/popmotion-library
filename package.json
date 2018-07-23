@@ -9,7 +9,8 @@
     "build": "rollup --config",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "deploy-storybook",
+    "deploy-storybook":
+      "deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN",
     "test": "react-app-rewired test --env=jsdom"
   },
   "peerDependencies": {
