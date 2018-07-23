@@ -1,5 +1,7 @@
 language: node_js
 cache: yarn
+before_deploy:
+  - npm install @storybook/storybook-deployer
 deploy:
   provider: script
   script: bash scripts/deploy.sh
