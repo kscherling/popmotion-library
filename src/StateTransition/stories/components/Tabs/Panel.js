@@ -9,15 +9,12 @@ const StyledPanel = styled.div`
   height: 300px;
   background: #ffffff;
   border-radius: 6px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: ${({ color }) => color};
 
   > label {
     margin-bottom: 0;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    color: #fff;
-    background: ${({ color }) => color};
+    color: ${({ color }) => color};
   }
 `
 
