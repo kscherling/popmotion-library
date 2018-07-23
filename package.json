@@ -5,6 +5,10 @@
   "author": "Kyle Scherling",
   "license": "MIT",
   "private": true,
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup --config",
     "build-storybook": "build-storybook -c .storybook -o docs",
